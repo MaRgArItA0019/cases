@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<script src="./support.js"></script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=112307259', 'ym');
+
+    ym(112307259, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/112307259" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#101010;}
+  body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  a{color:#ffffff;text-decoration:none;}
+  a:hover{color:#ffffff;}
+  @property --cva{syntax:"<angle>";initial-value:0deg;inherits:false;}
+  @keyframes cvspin{to{--cva:360deg;}}
+  @keyframes pagein{from{opacity:0;}to{opacity:1;}}
+  @keyframes risein{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:none;}}
+  [data-r="card"] > div:first-child > div:first-child,
+  [data-r="case"] > div:first-child > div:first-child{transition:transform .5s cubic-bezier(.22,.61,.36,1);}
+  [data-r="card"]:hover > div:first-child > div:first-child,
+  [data-r="case"]:hover > div:first-child > div:first-child{transform:scale(1.06);}
+  body{animation:pagein .25s ease both;}
+  body[data-leaving="1"]{animation:none;opacity:0;transition:opacity .3s ease;}
+  [data-r="cvbtn"]:hover [data-r="cvglow"],
+  [data-r="cvbtn"]:hover [data-r="cvring"]{opacity:1;}
+  [data-r="cvbtn"]{transition:scale .25s cubic-bezier(0.22,0.61,0.36,1), background .25s ease;}
+  [data-r="cvbtn"]:hover{scale:0.95;}
+  @media (max-width:1279px){
+    [data-r="shell"]{max-width:768px!important;padding:0 24px!important;}
+    [data-r="bar"]{height:72px!important;padding:8px 16px!important;}
+    [data-r="nav"]{display:none!important;}
+    [data-r="burger"]{display:flex!important;}
+    [data-r="hero"]{margin-top:80px!important;}
+    [data-r="hero-title"]{font-size:32px!important;line-height:40px!important;max-width:720px!important;}
+    [data-r="hero-sub"]{font-size:20px!important;line-height:24px!important;margin-top:20px!important;max-width:632px!important;}
+    [data-r="cards"]{margin-top:104px!important;row-gap:48px!important;max-width:none!important;}
+    [data-r="ctitle"]{font-size:24px!important;line-height:32px!important;}
+    [data-r="cdesc"]{font-size:20px!important;line-height:24px!important;}
+    [data-r="tag"]{font-size:20px!important;line-height:24px!important;}
+    [data-r="badge"]{width:64px!important;height:64px!important;left:16px!important;bottom:16px!important;}
+    [data-r="ui-title"]{margin-top:128px!important;font-size:32px!important;line-height:40px!important;}
+    [data-r="ui"]{margin-top:24px!important;}
+    [data-r="footer"]{margin-top:0!important;padding-top:64px!important;padding-bottom:64px!important;}
+  }
+  @media (max-width:699px){
+    [data-r="shell"]{max-width:480px!important;padding:0 16px!important;}
+    [data-r="bar"]{height:64px!important;}
+    [data-r="avatar"]{width:36px!important;height:36px!important;}
+    [data-r="hname"]{font-size:16px!important;}
+    [data-r="name-full"]{display:none!important;}
+    [data-r="name-short"]{display:inline!important;}
+    [data-r="hero"]{margin-top:48px!important;}
+    [data-r="hero-title"]{font-size:24px!important;line-height:32px!important;}
+    [data-r="hero-sub"]{margin-top:16px!important;}
+    [data-r="cards"]{grid-template-columns:1fr!important;row-gap:24px!important;margin-top:64px!important;}
+    [data-r="card"]{gap:16px!important;}
+    [data-r="ctext"]{gap:16px!important;}
+    [data-r="cmeta"]{gap:8px!important;}
+    [data-r="ctitle"]{font-size:20px!important;line-height:24px!important;}
+
+    [data-r="cdesc"]{font-size:16px!important;line-height:24px!important;}
+    [data-r="tag"]{font-size:16px!important;line-height:24px!important;}
+    [data-r="ui-title"]{margin-top:80px!important;font-size:24px!important;line-height:32px!important;}
+    [data-r="ui"]{margin-top:16px!important;}
+    [data-r="uirow"]{grid-template-columns:1fr!important;}
+    [data-r="footer"]{margin-top:0!important;padding-top:40px!important;padding-bottom:40px!important;}
+    [data-r="fname"]{display:none!important;}
+    [data-r="fcontact"]{flex:1 1 auto!important;justify-content:space-between!important;}
+    [data-r="fcontact"] > span{margin-right:0!important;}
+  }
+</style>
+</helmet>
+
+<div style="position:relative;width:100%;min-height:100vh;overflow-x:clip;background:#101010;font-family:Geologica, sans-serif;">
+
+  <div style="position:absolute;left:50%;top:-1951px;width:2540px;height:2540px;margin-left:-1270px;border-radius:50%;background:radial-gradient(1270px 1270px at 50% 50%, rgb(255,255,255) 11.54%, rgb(153,170,235) 49.14%, rgb(0,59,255) 72.67%, rgb(16,16,16) 100%);pointer-events:none;"></div>
+
+  <div data-r="shell" style="position:relative;width:100%;max-width:1440px;margin:0 auto;padding:0 80px;">
+
+    <div style="position:sticky;top:0;z-index:50;padding-top:40px;padding-bottom:8px;">
+      <div data-r="bar" style="position:relative;display:flex;flex-direction:row;align-items:center;justify-content:space-between;height:88px;border-radius:40px;background:rgba(255,255,255,0.1);backdrop-filter:blur(30px);padding:16px 32px;">
+        <div data-r="nameblock" style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+          <div data-r="avatar" style="width:56px;height:56px;border-radius:40px;flex-shrink:0;background:url(components/assets/8e0737210132a2d0.webp) 52.512% 50% / 175.103% 100% no-repeat;"></div>
+          <span data-r="hname" style="font-family:Geologica, sans-serif;font-weight:400;font-size:20px;line-height:24px;color:rgb(255,255,255);white-space:nowrap;">
+            <span data-r="name-full">Маргарита Денисова</span><span data-r="name-short" style="display:none;">Маргарита Д.</span>
+          </span>
+        </div>
+
+        <div data-r="nav" style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+          <a data-r="navlink" href="{{ tgUrl }}" target="_blank" rel="noreferrer" style="display:inline-flex;flex-direction:row;align-items:center;gap:8px;height:40px;padding:0 16px;border-radius:16px;text-decoration:none;color:rgb(255,255,255);" style-hover="text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px;">
+            <span style="width:16px;height:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="13.333" height="13.333" viewBox="0 0 13.333 13.333" fill="none"><path d="M 10.23 0.09 C 11.197 -0.086 12.079 -0.047 12.73 0.604 C 13.38 1.254 13.419 2.137 13.244 3.103 C 13.067 4.07 12.636 5.327 12.095 6.914 L 11.35 9.104 C 10.934 10.324 10.605 11.289 10.29 11.958 C 10.131 12.293 9.958 12.595 9.751 12.827 C 9.538 13.066 9.262 13.261 8.908 13.314 C 8.627 13.355 8.34 13.33 8.07 13.244 C 7.738 13.137 7.491 12.912 7.301 12.653 C 7.115 12.399 6.96 12.078 6.818 11.719 C 6.537 11.004 6.255 9.991 5.896 8.704 C 5.765 8.231 5.704 8.037 5.647 7.929 L 5.589 7.842 C 5.575 7.824 5.559 7.807 5.543 7.79 L 5.492 7.744 C 5.394 7.663 5.26 7.613 4.63 7.437 C 3.343 7.078 2.329 6.797 1.614 6.515 C 1.255 6.374 0.935 6.219 0.68 6.032 C 0.421 5.843 0.196 5.595 0.09 5.264 C 0.003 4.993 -0.022 4.706 0.02 4.425 C 0.072 4.071 0.267 3.794 0.506 3.581 C 0.739 3.375 1.04 3.202 1.375 3.044 C 2.044 2.728 3.01 2.399 4.229 1.984 L 6.419 1.238 C 8.006 0.697 9.263 0.266 10.23 0.09 Z" fill="currentColor" fill-rule="nonzero"></path></svg>
+            </span>
+            <span style="display:flex;align-items:center;padding-bottom:4px;">
+              <span style="font-family:Geologica, sans-serif;font-weight:400;font-size:16px;line-height:24px;letter-spacing:0.01em;white-space:nowrap;">Телеграм</span>
+            </span>
+          </a>
+
+          <a data-r="navlink" href="mailto:den-mndenisova@yandex.ru" onClick="{{ copyMail }}" style="display:inline-flex;flex-direction:row;align-items:center;gap:8px;height:40px;padding:0 16px;border-radius:16px;text-decoration:none;color:rgb(255,255,255);cursor:pointer;" style-hover="text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px;">
+            <span style="width:16px;height:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="13.333" height="10.667" viewBox="0 0 40 32" fill="none"><path d="M 23.999 0 C 29.6 0 32.402 -0.001 34.541 0.996 C 36.422 1.872 37.952 3.271 38.911 4.991 C 40.001 6.947 40 9.509 40 14.629 L 40 17.371 C 40 22.491 40.001 25.053 38.911 27.009 C 37.952 28.729 36.422 30.128 34.541 31.004 C 32.402 32.001 29.6 32 23.999 32 L 16.001 32 C 10.4 32 7.598 32.001 5.459 31.004 C 3.578 30.128 2.048 28.729 1.089 27.009 C -0.001 25.053 0 22.491 0 17.371 L 0 14.629 C 0 9.509 -0.001 6.947 1.089 4.991 C 2.048 3.271 3.578 1.872 5.459 0.996 C 7.598 -0.001 10.4 0 16.001 0 L 23.999 0 Z M 34.109 8.261 C 33.576 7.45 32.424 7.185 31.536 7.672 L 24.18 11.708 C 21.607 13.119 18.393 13.119 15.82 11.708 L 8.464 7.672 C 7.576 7.185 6.424 7.45 5.891 8.261 C 5.359 9.073 5.648 10.127 6.536 10.614 L 13.889 14.647 C 17.65 16.71 22.35 16.71 26.111 14.647 L 33.464 10.614 C 34.352 10.127 34.641 9.073 34.109 8.261 Z" fill="currentColor" fill-rule="nonzero"></path></svg>
+            </span>
+            <span style="display:flex;align-items:center;padding-bottom:4px;">
+              <span style="font-family:Geologica, sans-serif;font-weight:400;font-size:16px;line-height:24px;white-space:nowrap;">den-mndenisova@yandex.ru</span>
+            </span>
+          </a>
+
+          <a data-r="cvbtn" href="{{ cvUrl }}" download="rita-denisova" style="position:relative;display:inline-flex;flex-direction:row;align-items:center;gap:8px;width:150px;height:40px;padding:0 16px;border-radius:16px;background:rgba(255,255,255,0.2);text-decoration:none;color:rgb(255,255,255);flex-shrink:0;" style-hover="background:rgba(255,255,255,0.1);">
+            <span data-r="cvglow" style="position:absolute;inset:-2px;border-radius:18px;padding:3px;opacity:0;transition:opacity .3s ease;pointer-events:none;filter:blur(5px);background:conic-gradient(from var(--cva), rgba(255,255,255,0) 0deg, rgba(255,255,255,0) 150deg, rgba(255,255,255,0.55) 250deg, rgba(255,255,255,0.9) 320deg, rgba(255,255,255,0.55) 348deg, rgba(255,255,255,0) 360deg);-webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);mask-composite:exclude;animation:cvspin 2.6s linear infinite;"></span>
+            <span data-r="cvring" style="position:absolute;inset:0;border-radius:16px;padding:1px;opacity:0;transition:opacity .3s ease;pointer-events:none;background:conic-gradient(from var(--cva), rgba(255,255,255,0.22) 0deg, rgba(255,255,255,0.22) 150deg, rgba(255,255,255,0.7) 250deg, rgba(255,255,255,1) 320deg, rgba(255,255,255,0.7) 348deg, rgba(255,255,255,0.22) 360deg);-webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);mask-composite:exclude;animation:cvspin 2.6s linear infinite;"></span>
+            <span style="width:16px;height:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="13.667" height="13.666" viewBox="0 0 13.667 13.666" fill="none"><path d="M 7.833 0 C 9.076 0 10.059 -0.001 10.826 0.103 C 11.608 0.208 12.24 0.429 12.739 0.928 C 13.238 1.427 13.459 2.059 13.564 2.841 C 13.668 3.608 13.667 4.59 13.667 5.833 L 13.667 8.166 C 13.667 9.249 13.668 10.106 13.588 10.782 C 13.507 11.469 13.336 12.035 12.948 12.508 C 12.817 12.668 12.669 12.816 12.509 12.947 C 12.036 13.335 11.47 13.506 10.783 13.587 C 10.107 13.667 9.25 13.666 8.167 13.666 L 5.5 13.666 C 4.417 13.666 3.56 13.667 2.884 13.587 C 2.197 13.506 1.631 13.335 1.158 12.947 C 0.998 12.816 0.85 12.669 0.719 12.509 L 0.719 12.508 C 0.331 12.035 0.16 11.469 0.079 10.782 C -0.001 10.106 0 9.249 0 8.166 L 0 5.833 C 0 4.59 -0.001 3.608 0.103 2.841 C 0.208 2.059 0.429 1.427 0.928 0.928 C 1.427 0.429 2.059 0.208 2.841 0.103 C 3.608 -0.001 4.59 0 5.833 0 L 7.833 0 Z M 6.833 5.333 C 6.557 5.333 6.333 5.557 6.333 5.833 L 6.333 9.524 C 6.228 9.415 6.12 9.295 6.013 9.172 C 5.803 8.931 5.609 8.688 5.466 8.505 C 5.394 8.413 5.336 8.337 5.296 8.284 C 5.276 8.258 5.261 8.237 5.251 8.224 L 5.236 8.204 L 5.235 8.203 C 5.072 7.981 4.758 7.933 4.536 8.097 C 4.314 8.26 4.267 8.574 4.431 8.796 L 4.431 8.797 L 4.432 8.798 C 4.432 8.799 4.434 8.801 4.436 8.803 C 4.439 8.807 4.443 8.814 4.449 8.821 C 4.461 8.837 4.477 8.859 4.498 8.887 C 4.541 8.943 4.602 9.024 4.677 9.12 C 4.826 9.312 5.033 9.568 5.258 9.827 C 5.48 10.083 5.73 10.353 5.967 10.562 C 6.084 10.666 6.211 10.765 6.338 10.842 C 6.451 10.91 6.628 11 6.833 11 C 7.038 11 7.215 10.91 7.328 10.842 C 7.455 10.765 7.582 10.666 7.699 10.562 C 7.936 10.353 8.186 10.083 8.408 9.827 C 8.633 9.568 8.84 9.312 8.989 9.12 C 9.064 9.024 9.125 8.943 9.168 8.887 C 9.189 8.859 9.205 8.837 9.217 8.821 C 9.223 8.814 9.227 8.807 9.23 8.803 C 9.232 8.801 9.234 8.799 9.234 8.798 L 9.235 8.797 L 9.235 8.796 C 9.399 8.574 9.352 8.26 9.13 8.097 C 8.935 7.953 8.671 7.972 8.498 8.128 L 8.431 8.203 L 8.43 8.204 L 8.415 8.224 C 8.405 8.237 8.39 8.258 8.37 8.284 C 8.33 8.337 8.272 8.413 8.2 8.505 C 8.057 8.688 7.863 8.931 7.653 9.172 C 7.546 9.295 7.438 9.415 7.333 9.524 L 7.333 5.833 C 7.333 5.557 7.109 5.333 6.833 5.333 Z M 5.833 1 C 4.562 1 3.659 1.001 2.974 1.093 C 2.303 1.183 1.917 1.353 1.635 1.635 C 1.353 1.917 1.183 2.303 1.093 2.974 C 1.072 3.131 1.055 3.301 1.042 3.483 C 1.08 3.449 1.119 3.417 1.158 3.385 C 1.631 2.997 2.197 2.826 2.884 2.745 C 3.56 2.665 4.417 2.666 5.5 2.666 L 8.167 2.666 C 9.25 2.666 10.107 2.665 10.783 2.745 C 11.47 2.826 12.036 2.997 12.509 3.385 C 12.547 3.417 12.586 3.449 12.623 3.482 C 12.61 3.3 12.594 3.131 12.573 2.974 C 12.483 2.303 12.314 1.917 12.032 1.635 C 11.75 1.353 11.363 1.183 10.692 1.093 C 10.007 1.001 9.104 1 7.833 1 L 5.833 1 Z" fill="currentColor" fill-rule="nonzero"></path></svg>
+            </span>
+            <span style="display:flex;align-items:center;padding-bottom:4px;">
+              <span style="font-family:Geologica, sans-serif;font-weight:400;font-size:16px;line-height:24px;white-space:nowrap;">Скачать CV</span>
+            </span>
+          </a>
+        </div>
+
+        <button data-r="burger" type="button" onClick="{{ toggleMenu }}" aria-label="Меню" style="display:none;width:48px;height:48px;align-items:center;justify-content:center;background:none;border:0;padding:0;cursor:pointer;flex-shrink:0;">
+          <span style="display:flex;flex-direction:column;gap:8.5px;width:24px;">
+            <span style="display:block;width:24px;height:2px;border-radius:1px;background:rgb(255,255,255);"></span>
+            <span style="display:block;width:24px;height:2px;border-radius:1px;background:rgb(255,255,255);"></span>
+            <span style="display:block;width:24px;height:2px;border-radius:1px;background:rgb(255,255,255);"></span>
+          </span>
+        </button>
+      </div>
+
+      <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+        <div data-r="menu" style="position:absolute;left:0;right:0;top:calc(100% + 8px);border-radius:32px;background:rgba(255,255,255,0.2);backdrop-filter:blur(30px);padding:16px;display:flex;flex-direction:column;gap:4px;z-index:20;">
+          <a href="{{ tgUrl }}" target="_blank" rel="noreferrer" onClick="{{ closeMenu }}" style="display:flex;flex-direction:row;align-items:center;gap:8px;height:40px;padding:0 16px;border-radius:16px;text-decoration:none;color:rgb(255,255,255);">
+            <span style="width:16px;height:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="13.333" height="13.333" viewBox="0 0 13.333 13.333" fill="none"><path d="M 10.23 0.09 C 11.197 -0.086 12.079 -0.047 12.73 0.604 C 13.38 1.254 13.419 2.137 13.244 3.103 C 13.067 4.07 12.636 5.327 12.095 6.914 L 11.35 9.104 C 10.934 10.324 10.605 11.289 10.29 11.958 C 10.131 12.293 9.958 12.595 9.751 12.827 C 9.538 13.066 9.262 13.261 8.908 13.314 C 8.627 13.355 8.34 13.33 8.07 13.244 C 7.738 13.137 7.491 12.912 7.301 12.653 C 7.115 12.399 6.96 12.078 6.818 11.719 C 6.537 11.004 6.255 9.991 5.896 8.704 C 5.765 8.231 5.704 8.037 5.647 7.929 L 5.589 7.842 C 5.575 7.824 5.559 7.807 5.543 7.79 L 5.492 7.744 C 5.394 7.663 5.26 7.613 4.63 7.437 C 3.343 7.078 2.329 6.797 1.614 6.515 C 1.255 6.374 0.935 6.219 0.68 6.032 C 0.421 5.843 0.196 5.595 0.09 5.264 C 0.003 4.993 -0.022 4.706 0.02 4.425 C 0.072 4.071 0.267 3.794 0.506 3.581 C 0.739 3.375 1.04 3.202 1.375 3.044 C 2.044 2.728 3.01 2.399 4.229 1.984 L 6.419 1.238 C 8.006 0.697 9.263 0.266 10.23 0.09 Z" fill="currentColor" fill-rule="nonzero"></path></svg>
+            </span>
+            <span style="display:flex;align-items:center;padding-bottom:4px;">
+              <span style="font-family:Geologica, sans-serif;font-weight:400;font-size:16px;line-height:24px;letter-spacing:0.01em;white-space:nowrap;">Телеграм</span>
+            </span>
+          </a>
+          <a href="mailto:den-mndenisova@yandex.ru" onClick="{{ copyMailAndClose }}" style="display:flex;flex-direction:row;align-items:center;gap:8px;height:40px;padding:0 16px;border-radius:16px;text-decoration:none;color:rgb(255,255,255);">
+            <span style="width:16px;height:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="13.333" height="10.667" viewBox="0 0 40 32" fill="none"><path d="M 23.999 0 C 29.6 0 32.402 -0.001 34.541 0.996 C 36.422 1.872 37.952 3.271 38.911 4.991 C 40.001 6.947 40 9.509 40 14.629 L 40 17.371 C 40 22.491 40.001 25.053 38.911 27.009 C 37.952 28.729 36.422 30.128 34.541 31.004 C 32.402 32.001 29.6 32 23.999 32 L 16.001 32 C 10.4 32 7.598 32.001 5.459 31.004 C 3.578 30.128 2.048 28.729 1.089 27.009 C -0.001 25.053 0 22.491 0 17.371 L 0 14.629 C 0 9.509 -0.001 6.947 1.089 4.991 C 2.048 3.271 3.578 1.872 5.459 0.996 C 7.598 -0.001 10.4 0 16.001 0 L 23.999 0 Z M 34.109 8.261 C 33.576 7.45 32.424 7.185 31.536 7.672 L 24.18 11.708 C 21.607 13.119 18.393 13.119 15.82 11.708 L 8.464 7.672 C 7.576 7.185 6.424 7.45 5.891 8.261 C 5.359 9.073 5.648 10.127 6.536 10.614 L 13.889 14.647 C 17.65 16.71 22.35 16.71 26.111 14.647 L 33.464 10.614 C 34.352 10.127 34.641 9.073 34.109 8.261 Z" fill="currentColor" fill-rule="nonzero"></path></svg>
+            </span>
+            <span style="display:flex;align-items:center;padding-bottom:4px;">
+              <span style="font-family:Geologica, sans-serif;font-weight:400;font-size:16px;line-height:24px;white-space:nowrap;">den-mndenisova@yandex.ru</span>
+            </span>
+          </a>
+          <a href="{{ cvUrl }}" download="rita-denisova" onClick="{{ closeMenu }}" style="display:flex;flex-direction:row;align-items:center;gap:8px;height:40px;padding:0 16px;border-radius:16px;text-decoration:none;color:rgb(255,255,255);">
+            <span style="width:16px;height:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="13.667" height="13.666" viewBox="0 0 13.667 13.666" fill="none"><path d="M 7.833 0 C 9.076 0 10.059 -0.001 10.826 0.103 C 11.608 0.208 12.24 0.429 12.739 0.928 C 13.238 1.427 13.459 2.059 13.564 2.841 C 13.668 3.608 13.667 4.59 13.667 5.833 L 13.667 8.166 C 13.667 9.249 13.668 10.106 13.588 10.782 C 13.507 11.469 13.336 12.035 12.948 12.508 C 12.817 12.668 12.669 12.816 12.509 12.947 C 12.036 13.335 11.47 13.506 10.783 13.587 C 10.107 13.667 9.25 13.666 8.167 13.666 L 5.5 13.666 C 4.417 13.666 3.56 13.667 2.884 13.587 C 2.197 13.506 1.631 13.335 1.158 12.947 C 0.998 12.816 0.85 12.669 0.719 12.509 L 0.719 12.508 C 0.331 12.035 0.16 11.469 0.079 10.782 C -0.001 10.106 0 9.249 0 8.166 L 0 5.833 C 0 4.59 -0.001 3.608 0.103 2.841 C 0.208 2.059 0.429 1.427 0.928 0.928 C 1.427 0.429 2.059 0.208 2.841 0.103 C 3.608 -0.001 4.59 0 5.833 0 L 7.833 0 Z M 6.833 5.333 C 6.557 5.333 6.333 5.557 6.333 5.833 L 6.333 9.524 C 6.228 9.415 6.12 9.295 6.013 9.172 C 5.803 8.931 5.609 8.688 5.466 8.505 C 5.394 8.413 5.336 8.337 5.296 8.284 C 5.276 8.258 5.261 8.237 5.251 8.224 L 5.236 8.204 L 5.235 8.203 C 5.072 7.981 4.758 7.933 4.536 8.097 C 4.314 8.26 4.267 8.574 4.431 8.796 L 4.431 8.797 L 4.432 8.798 C 4.432 8.799 4.434 8.801 4.436 8.803 C 4.439 8.807 4.443 8.814 4.449 8.821 C 4.461 8.837 4.477 8.859 4.498 8.887 C 4.541 8.943 4.602 9.024 4.677 9.12 C 4.826 9.312 5.033 9.568 5.258 9.827 C 5.48 10.083 5.73 10.353 5.967 10.562 C 6.084 10.666 6.211 10.765 6.338 10.842 C 6.451 10.91 6.628 11 6.833 11 C 7.038 11 7.215 10.91 7.328 10.842 C 7.455 10.765 7.582 10.666 7.699 10.562 C 7.936 10.353 8.186 10.083 8.408 9.827 C 8.633 9.568 8.84 9.312 8.989 9.12 C 9.064 9.024 9.125 8.943 9.168 8.887 C 9.189 8.859 9.205 8.837 9.217 8.821 C 9.223 8.814 9.227 8.807 9.23 8.803 C 9.232 8.801 9.234 8.799 9.234 8.798 L 9.235 8.797 L 9.235 8.796 C 9.399 8.574 9.352 8.26 9.13 8.097 C 8.935 7.953 8.671 7.972 8.498 8.128 L 8.431 8.203 L 8.43 8.204 L 8.415 8.224 C 8.405 8.237 8.39 8.258 8.37 8.284 C 8.33 8.337 8.272 8.413 8.2 8.505 C 8.057 8.688 7.863 8.931 7.653 9.172 C 7.546 9.295 7.438 9.415 7.333 9.524 L 7.333 5.833 C 7.333 5.557 7.109 5.333 6.833 5.333 Z M 5.833 1 C 4.562 1 3.659 1.001 2.974 1.093 C 2.303 1.183 1.917 1.353 1.635 1.635 C 1.353 1.917 1.183 2.303 1.093 2.974 C 1.072 3.131 1.055 3.301 1.042 3.483 C 1.08 3.449 1.119 3.417 1.158 3.385 C 1.631 2.997 2.197 2.826 2.884 2.745 C 3.56 2.665 4.417 2.666 5.5 2.666 L 8.167 2.666 C 9.25 2.666 10.107 2.665 10.783 2.745 C 11.47 2.826 12.036 2.997 12.509 3.385 C 12.547 3.417 12.586 3.449 12.623 3.482 C 12.61 3.3 12.594 3.131 12.573 2.974 C 12.483 2.303 12.314 1.917 12.032 1.635 C 11.75 1.353 11.363 1.183 10.692 1.093 C 10.007 1.001 9.104 1 7.833 1 L 5.833 1 Z" fill="currentColor" fill-rule="nonzero"></path></svg>
+            </span>
+            <span style="display:flex;align-items:center;padding-bottom:4px;">
+              <span style="font-family:Geologica, sans-serif;font-weight:400;font-size:16px;line-height:24px;white-space:nowrap;">Скачать CV</span>
+            </span>
+          </a>
+        </div>
+      </sc-if>
+    </div>
+
+    <div data-r="hero" style="width:100%;max-width:956px;margin:80px auto 0 auto;display:flex;flex-direction:column;align-items:flex-start;">
+      <h1 data-r="hero-title" style="margin:0;max-width:956px;font-family:Geologica, sans-serif;font-weight:400;font-size:40px;line-height:48px;text-align:left;text-wrap:pretty;color:rgb(255,255,255);">Привет! Я Маргарита, продуктовый дизайнер с&nbsp;опытом в&nbsp;нагруженных B2B и&nbsp;B2C сервисах</h1>
+      <p data-r="hero-sub" style="margin:24px 0 0 0;max-width:632px;font-family:Geologica, sans-serif;font-weight:400;font-size:24px;line-height:32px;text-align:left;text-wrap:pretty;color:rgba(255,255,255,0.6);">Захожу на&nbsp;проекты как&nbsp;с&nbsp;уже существующей сложной логикой, так и&nbsp;на&nbsp;стадии 0→1: когда есть идея, но&nbsp;никто не&nbsp;понимает, что&nbsp;из&nbsp;этого получится</p>
+    </div>
+
+    <div data-r="cards" style="width:100%;max-width:956px;margin:116px auto 0 auto;display:grid;grid-template-columns:1fr 1fr;column-gap:16px;row-gap:64px;align-items:start;">
+
+      <a data-r="card" href="{{ caseGosuslugi }}" target="{{ linkTarget }}" style="display:flex;flex-direction:column;gap:24px;text-decoration:none;color:inherit;">
+        <div style="position:relative;width:100%;aspect-ratio:1 / 1;border-radius:24px;overflow:hidden;background:rgb(234,236,240);">
+          <div style="position:absolute;inset:0;background:url(components/assets/fe0e517d2e6f3883.webp) 50% 50% / 158.228% 158.228% no-repeat;"></div>
+          <div data-r="badge" style="position:absolute;left:24px;bottom:24px;width:88px;height:88px;background:url(components/assets/6658b4f462a46bae.webp) center / cover no-repeat;"></div>
+        </div>
+        <div data-r="ctext" style="display:flex;flex-direction:column;gap:32px;">
+          <div data-r="cmeta" style="display:flex;flex-direction:column;gap:16px;">
+            <span data-r="ctitle" style="font-family: Geologica, sans-serif; font-weight: 500; font-size: 32px; line-height: 40.15px; letter-spacing: 0.01em; color: rgb(255,255,255)">Госуслуги</span>
+            <span data-r="cdesc" style="font-family:Geologica, sans-serif;font-weight:400;font-size:24px;line-height:32px;letter-spacing:0.01em;text-wrap:pretty;color:rgba(255,255,255,0.6);">Редизайн ключевых разделов iOS-приложения государственных услуг</span>
+          </div>
+          <div style="display:flex;flex-direction:row;flex-wrap:wrap;gap:8px;">
+            <span data-r="tag" style="display:inline-flex;align-items:center;justify-content:center;border-radius:16px;background:rgba(255,255,255,0.08);padding:7px 16px 9px 16px;font-family:Geologica, sans-serif;font-weight:400;font-size:24px;line-height:32px;letter-spacing:0.01em;white-space:nowrap;color:rgba(255,255,255,0.6);">Услуги</span>
+            <span data-r="tag" style="display:inline-flex;align-items:center;justify-content:center;border-radius:16px;background:rgba(255,255,255,0.08);padding:7px 16px 9px 16px;font-family:Geologica, sans-serif;font-weight:400;font-size:24px;line-height:32px;letter-spacing:0.01em;white-space:nowrap;color:rgba(255,255,255,0.6);">G2C</span>
+            <span data-r="tag" style="display:inline-flex;align-items:center;justify-content:center;border-radius:16px;background:rgba(255,255,255,0.08);padding:7px 16px 9px 16px;font-family:Geologica, sans-serif;font-weight:400;font-size:24px;line-height:32px;letter-spacing:0.01em;white-space:nowrap;color:rgba(255,255,255,0.6);">iOS</span>
+          </div>
+        </div>
+      </a>
+
+      <a data-r="card" href="{{ caseMoex }}" target="{{ linkTarget }}" style="display:flex;flex-direction:column;gap:24px;text-decoration:none;color:inherit;">
+        <div style="position:relative;width:100%;aspect-ratio:1 / 1;border-radius:24px;overflow:hidden;background:rgb(234,236,240);">
+          <div style="position:absolute;inset:0;background:url(components/assets/7c797c1b86acd342.webp) center / cover no-repeat;"></div>
+          <div data-r="badge" style="position:absolute;left:24px;bottom:24px;width:88px;height:88px;background:url(components/assets/11e1fc2176603e3a.webp) center / cover no-repeat;"></div>
+        </div>
+        <div data-r="ctext" style="display:flex;flex-direction:column;gap:32px;">
+          <div data-r="cmeta" style="display:flex;flex-direction:column;gap:16px;">
+            <span data-r="ctitle" style="font-family: Geologica, sans-serif; font-weight: 500; font-size: 32px; line-height: 40.4px; letter-spacing: 0.01em; color: rgb(255,255,255)">MOEX</span>
+            <span data-r="cdesc" style="font-family:Geologica, sans-serif;font-weight:400;font-size:24px;line-height:32px;letter-spacing:0.01em;text-wrap:pretty;color:rgba(255,255,255,0.6);">Проектирование флоу для&nbsp;нового продукта компании, веб-терминала</span>
+          </div>
+          <div style="display:flex;flex-direction:row;flex-wrap:wrap;gap:8px;">
+            <span data-r="tag" style="display:inline-flex;align-items:center;justify-content:center;border-radius:16px;background:rgba(255,255,255,0.08);padding:7px 16px 9px 16px;font-family:Geologica, sans-serif;font-weight:400;font-size:24px;line-height:32px;letter-spacing:0.01em;white-space:nowrap;color:rgba(255,255,255,0.6);">FinTech</span>
+            <span data-r="tag" style="display:inline-flex;align-items:center;justify-content:center;border-radius:16px;background:rgba(255,255,255,0.08);padding:7px 16px 9px 16px;font-family:Geologica, sans-serif;font-weight:400;font-size:24px;line-height:32px;letter-spacing:0.01em;white-space:nowrap;color:rgba(255,255,255,0.6);">В2В</span>
+            <span data-r="tag" style="display:inline-flex;align-items:center;justify-content:center;border-radius:16px;background:rgba(255,255,255,0.08);padding:7px 16px 9px 16px;font-family:Geologica, sans-serif;font-weight:400;font-size:24px;line-height:32px;letter-spacing:0.01em;white-space:nowrap;color:rgba(255,255,255,0.6);">Web, iOS, Android</span>
+          </div>
+        </div>
+      </a>
+
+      <a data-r="card" href="{{ caseYandex }}" target="{{ linkTarget }}" style="display:flex;flex-direction:column;gap:24px;text-decoration:none;color:inherit;">
+        <div style="position:relative;width:100%;aspect-ratio:1 / 1;border-radius:24px;overflow:hidden;background:rgb(234,236,240);">
+          <div style="position:absolute;inset:0;background:url(components/assets/2f5626ec47c0cb1b.webp) 50% 64.865% / 123.418% 123.418% no-repeat;"></div>
+          <div data-r="badge" style="position:absolute;left:24px;bottom:24px;width:88px;height:88px;background:url(components/assets/603ba604944282b0.webp) center / cover no-repeat;"></div>
+        </div>
+        <div data-r="ctext" style="display:flex;flex-direction:column;gap:32px;">
+          <div data-r="cmeta" style="display:flex;flex-direction:column;gap:16px;">
+            <span data-r="ctitle" style="font-family: Geologica, sans-serif; font-weight: 500; font-size: 32px; line-height: 40.05px; letter-spacing: 0.01em; color: rgb(255,255,255)">Яндекс</span>
+            <span data-r="cdesc" style="font-family:Geologica, sans-serif;font-weight:400;font-size:24px;line-height:32px;letter-spacing:0.01em;text-wrap:pretty;color:rgba(255,255,255,0.6);">Картографический сервис для&nbsp;кастомизации параметров дорог</span>
+          </div>
+          <div style="display:flex;flex-direction:row;flex-wrap:wrap;gap:8px;">
+            <span data-r="tag" style="display:inline-flex;align-items:center;justify-content:center;border-radius:16px;background:rgba(255,255,255,0.08);padding:7px 16px 9px 16px;font-family:Geologica, sans-serif;font-weight:400;font-size:24px;line-height:32px;letter-spacing:0.01em;white-space:nowrap;color:rgba(255,255,255,0.6);">Карта</span>
+            <span data-r="tag" style="display:inline-flex;align-items:center;justify-content:center;border-radius:16px;background:rgba(255,255,255,0.08);padding:7px 16px 9px 16px;font-family:Geologica, sans-serif;font-weight:400;font-size:24px;line-height:32px;letter-spacing:0.01em;white-space:nowrap;color:rgba(255,255,255,0.6);">В2В</span>
+            <span data-r="tag" style="display:inline-flex;align-items:center;justify-content:center;border-radius:16px;background:rgba(255,255,255,0.08);padding:7px 16px 9px 16px;font-family:Geologica, sans-serif;font-weight:400;font-size:24px;line-height:32px;letter-spacing:0.01em;white-space:nowrap;color:rgba(255,255,255,0.6);">Web</span>
+          </div>
+        </div>
+      </a>
+
+      <a data-r="card" href="{{ caseAvito }}" target="{{ linkTarget }}" style="display:flex;flex-direction:column;gap:24px;text-decoration:none;color:inherit;">
+        <div style="position:relative;width:100%;aspect-ratio:1 / 1;border-radius:24px;overflow:hidden;background:rgb(234,236,240);">
+          <div style="position:absolute;inset:0;background:url(components/assets/e97499ef2a69f01d.webp) center / cover no-repeat;"></div>
+          <div data-r="badge" style="position:absolute;left:24px;bottom:24px;width:88px;height:88px;background:url(components/assets/fefbe67514823d34.webp) center / cover no-repeat;"></div>
+        </div>
+        <div data-r="ctext" style="display:flex;flex-direction:column;gap:32px;">
+          <div data-r="cmeta" style="display:flex;flex-direction:column;gap:16px;">
+            <span data-r="ctitle" style="font-family: Geologica, sans-serif; font-weight: 500; font-size: 32px; line-height: 40.25px; letter-spacing: 0.01em; color: rgb(255,255,255)">Авито</span>
+            <span data-r="cdesc" style="font-family: Geologica, sans-serif; font-weight: 400; font-size: 24px; line-height: 32px; letter-spacing: 0.01em; text-wrap: pretty; color: rgba(255,255,255,0.6)">Тендер на&nbsp;создание новой вертикали, Fashion-маркетплейса</span>
+          </div>
+          <div style="display:flex;flex-direction:row;flex-wrap:wrap;gap:8px;">
+            <span data-r="tag" style="display:inline-flex;align-items:center;justify-content:center;border-radius:16px;background:rgba(255,255,255,0.08);padding:7px 16px 9px 16px;font-family:Geologica, sans-serif;font-weight:400;font-size:24px;line-height:32px;letter-spacing:0.01em;white-space:nowrap;color:rgba(255,255,255,0.6);">E-com</span>
+            <span data-r="tag" style="display:inline-flex;align-items:center;justify-content:center;border-radius:16px;background:rgba(255,255,255,0.08);padding:7px 16px 9px 16px;font-family:Geologica, sans-serif;font-weight:400;font-size:24px;line-height:32px;letter-spacing:0.01em;white-space:nowrap;color:rgba(255,255,255,0.6);">В2C</span>
+            <span data-r="tag" style="display:inline-flex;align-items:center;justify-content:center;border-radius:16px;background:rgba(255,255,255,0.08);padding:7px 16px 9px 16px;font-family:Geologica, sans-serif;font-weight:400;font-size:24px;line-height:32px;letter-spacing:0.01em;white-space:nowrap;color:rgba(255,255,255,0.6);">Web, iOS</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div data-r="ui-title" style="width: 100%; max-width: 956px; margin: 168px auto 0 auto; font-family: Geologica, sans-serif; font-weight: 500; font-size: 40px; line-height: 48px; color: rgb(255,255,255); text-align: left">Галерея UI штук</div>
+
+    <div data-r="ui" style="width: 100%; max-width: 956px; margin: 90px auto 0 auto; display: flex; flex-direction: column; gap: 16px; margin-top: 48px">
+
+      <div data-u="7" style="position:relative;width:100%;aspect-ratio:956 / 679;border-radius:24px;overflow:hidden;background:rgb(26,26,26);">
+        <video src="media/web-optimized.mp4" poster="media/web-poster.webp" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline" webkit-playsinline="webkit-playsinline" preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;"></video>
+      </div>
+
+      <div data-u="1" style="width:100%;aspect-ratio:956 / 637;border-radius:24px;overflow:hidden;background:url(components/assets/5a602bb7a649c2b6.webp) center / cover no-repeat;"></div>
+
+      <div data-r="uirow" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div data-u="2" style="position:relative;width:100%;aspect-ratio:470 / 705;border-radius:24px;overflow:hidden;background:url(components/assets/34c1bf047d3eb547.webp) center / cover no-repeat;"></div>
+        <div data-u="3" style="position:relative;width:100%;aspect-ratio:470 / 705;border-radius:24px;overflow:hidden;background:rgb(26,26,26);">
+          <div style="position:absolute;left:9.3617%;top:0%;width:81.1019%;height:100%;overflow:hidden;">
+            <video src="media/lemon-optimized.mp4" poster="media/lemon-poster.webp" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline" webkit-playsinline="webkit-playsinline" preload="none" style="position:absolute;left:13.3486%;top:7.2178%;width:73.1657%;height:85.5643%;object-fit:cover;"></video>
+            <div style="position:absolute;inset:0;background:url(components/assets/iphone-13-mini-pink-2.webp) center / cover no-repeat;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div data-u="4" style="position:relative;width:100%;aspect-ratio:956 / 637;border-radius:24px;overflow:hidden;background:rgb(26,26,26);">
+        <video src="media/component.mp4" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline" preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+      </div>
+
+      <div data-r="uirow" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div data-u="5" style="position:relative;width:100%;aspect-ratio:470 / 705;border-radius:24px;overflow:hidden;background:rgb(26,26,26);">
+          <div style="position:absolute;left:9.3617%;top:0%;width:81.1023%;height:100%;background:url(components/assets/4b89c0fb9c7b7768.webp) center / cover no-repeat;"></div>
+        </div>
+        <div data-u="6" style="position:relative;width:100%;aspect-ratio:470 / 705;border-radius:24px;overflow:hidden;background:rgb(26,26,26);">
+          <video src="media/glitch.mp4" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline" preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+        </div>
+      </div>
+
+      <div data-u="8" style="width:100%;aspect-ratio:956 / 679;border-radius:24px;overflow:hidden;background:url(components/assets/5371293993b3be0b.webp) center / cover no-repeat;"></div>
+    </div>
+
+    <div data-r="footer" style="margin-top: 0px; padding-bottom: 80px; padding-top: 80px; display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 24px">
+      
+      
+    </div>
+  </div>
+
+
+  <div ref="{{ tipRef }}" style="position:fixed;left:0;top:0;z-index:100;pointer-events:none;opacity:0;transform:translate(-9999px,-9999px);transition:opacity .12s ease;border-radius:8px;background:rgb(26,26,26);padding:4px 10px;font-family:Geologica, sans-serif;font-weight:400;font-size:14px;line-height:20px;white-space:nowrap;color:rgba(255,255,255,0.9);">Скопировано</div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;tgUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://t.me/mn_denisova&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Ссылки&quot;},&quot;cvUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;cv.pdf&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Ссылки&quot;},&quot;caseGosuslugi&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;gosuslugi.dc.html&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Кейсы&quot;},&quot;caseMoex&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;MOEX.dc.html&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Кейсы&quot;},&quot;caseYandex&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;yandex.dc.html&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Кейсы&quot;},&quot;caseAvito&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;avito.dc.html&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Кейсы&quot;},&quot;openCasesInNewTab&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Кейсы&quot;}}">
+class Component extends DCLogic {
+  state = { menuOpen: false };
+  _tipRef = React.createRef();
+
+  componentDidMount() {
+    document.addEventListener("pointerdown", this._outside, true);
+    this._nav = (e) => {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      const a = e.target && e.target.closest && e.target.closest("a[href]");
+      if (!a || a.target === "_blank" || a.hasAttribute("download")) return;
+      const href = a.getAttribute("href");
+      if (!href || href.indexOf(".dc.html") === -1) return;
+      e.preventDefault();
+      document.body.setAttribute("data-leaving", "1");
+      setTimeout(() => { window.location.href = href; }, 300);
+    };
+    document.addEventListener("click", this._nav);
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      const vh = window.innerHeight, picked = [];
+      for (const el of document.querySelectorAll("[data-r]")) {
+        const r = el.getBoundingClientRect();
+        if (r.top >= vh || r.bottom <= 0 || r.height < 8) continue;
+        if (picked.some(p => p.contains(el))) continue;
+        picked.push(el);
+      }
+      picked.sort((a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top);
+      picked.forEach((el, i) => {
+        const d = i * 70;
+        el.style.animation = "risein .6s cubic-bezier(.22,.61,.36,1) both";
+        el.style.animationDelay = d + "ms";
+        setTimeout(() => { el.style.animation = ""; el.style.animationDelay = ""; }, d + 750);
+      });
+    }));
+  }
+
+  _outside = (e) => {
+    if (!this.state.menuOpen) return;
+    const bar = e.target.closest && e.target.closest('[data-r="bar"], [data-r="menu"]');
+    if (!bar) this.setState({ menuOpen: false });
+  };
+
+  componentWillUnmount() {
+    document.removeEventListener("pointerdown", this._outside, true);
+    clearTimeout(this._cur);
+    clearTimeout(this._t);
+    document.removeEventListener("mousemove", this._move);
+  }
+
+  _move = (e) => {
+    const el = this._tipRef.current;
+    if (el) el.style.transform = "translate(" + (e.clientX + 14) + "px," + (e.clientY + 18) + "px)";
+  };
+
+  _hideTip = () => {
+    document.removeEventListener("mousemove", this._move);
+    const el = this._tipRef.current;
+    if (el) { el.style.opacity = "0"; el.style.transform = "translate(-9999px,-9999px)"; }
+  };
+
+  renderVals() {
+    const p = this.props;
+    return {
+      menuOpen: this.state.menuOpen,
+      tipRef: this._tipRef,
+      tgUrl: p.tgUrl ?? "https://t.me/mn_denisova",
+      cvUrl: p.cvUrl ?? "cv.pdf",
+      caseGosuslugi: p.caseGosuslugi ?? "gosuslugi.dc.html",
+      caseMoex: p.caseMoex ?? "MOEX.dc.html",
+      caseYandex: p.caseYandex ?? "yandex.dc.html",
+      caseAvito: p.caseAvito ?? "avito.dc.html",
+      linkTarget: (p.openCasesInNewTab ?? false) ? "_blank" : "_self",
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      copyMailAndClose: (e) => {
+        this._copy(e);
+        this.setState({ menuOpen: false });
+      },
+      copyMail: this._copy
+    };
+  }
+
+  _copy = (e) => {
+    {
+        e.preventDefault();
+        const mail = "den-mndenisova@yandex.ru";
+        const legacy = () => {
+          try {
+            const ta = document.createElement("textarea");
+            ta.value = mail;
+            ta.setAttribute("readonly", "");
+            ta.style.cssText = "position:fixed;top:0;left:0;width:1px;height:1px;padding:0;border:0;opacity:0;";
+            document.body.appendChild(ta);
+            ta.focus();
+            ta.select();
+            ta.setSelectionRange(0, mail.length);
+            document.execCommand("copy");
+            document.body.removeChild(ta);
+          } catch (err) { /* noop */ }
+        };
+        try {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(mail).catch(legacy);
+          } else {
+            legacy();
+          }
+        } catch (err) { legacy(); }
+
+        clearTimeout(this._t);
+        const el = this._tipRef.current;
+        if (el) {
+          el.style.transform = "translate(" + (e.clientX + 14) + "px," + (e.clientY + 18) + "px)";
+          el.style.opacity = "1";
+        }
+        document.addEventListener("mousemove", this._move);
+        this._t = setTimeout(this._hideTip, 1200);
+      }
+  };
+}
+
+</script>
+</body>
+</html>
