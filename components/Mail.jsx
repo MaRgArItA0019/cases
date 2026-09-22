@@ -57,7 +57,7 @@ export function Mail(_p = {}) {
           lineHeight: "20px",
           color: "rgb(255,255,255)",
           flexShrink: 0,
-        }}>{props.text1 ?? "den-mndenisova@yandex.ru"}</span>
+        }}>{props.text1 ?? "rita-mndenisova@yandex.ru"}</span>
       </div>
       <svg width={0} height={1} viewBox="0 -0.500 0 1" fill="none" style={{
         position: "absolute",
@@ -123,7 +123,7 @@ export function Mail(_p = {}) {
           lineHeight: "20px",
           color: "rgb(255,255,255)",
           flexShrink: 0,
-        }}>{props.text1 ?? "den-mndenisova@yandex.ru"}</span>
+        }}>{props.text1 ?? "rita-mndenisova@yandex.ru"}</span>
       </div>
       <svg width={217} height={1} viewBox="0 -0.500 217 1" fill="none" style={{
         position: "absolute",
